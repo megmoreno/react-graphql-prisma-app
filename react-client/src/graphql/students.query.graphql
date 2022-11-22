@@ -1,0 +1,9 @@
+query GetStudents {
+  students {
+    name
+    learningFocuses {
+      name
+      description
+    }
+  }
+}

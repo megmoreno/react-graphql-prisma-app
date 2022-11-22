@@ -1,9 +1,5 @@
-export type LearningFocus = {
-    name: string
-    description: string
-}
+import type { GetStudentsQuery } from './graphql/generated'
 
-export type Student = {
-    name: string
-    learningFocuses: LearningFocus[]
-}
+export type LearningFocus =
+  GetStudentsQuery['students'][0]['learningFocuses'][0]
+export type Student = GetStudentsQuery['students'][0]
