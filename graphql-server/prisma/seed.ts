@@ -1,4 +1,8 @@
 import { PrismaClient } from '@prisma/client'
+import {
+  getSundayOfCurrentWeek,
+  getSaturdayOfCurrentWeek,
+} from '../src/util/DateUtil'
 const prisma = new PrismaClient()
 
 async function main() {
@@ -63,8 +67,14 @@ async function main() {
     },
   })
 
+  const currentDate = new Date()
+  const startingSunday = getSundayOfCurrentWeek(currentDate)
+  const endingSaturday = getSaturdayOfCurrentWeek(currentDate)
+
   await prisma.weeklyPlan.create({
     data: {
+      startDate: startingSunday,
+      endDate: endingSaturday,
       resourcesNeeded: ['sunscreen', 'snorkel mask', 'water shoes for Jonah'],
       activities: [
         'swimming with dolphins, Atlantis submarine, playing with cousins',
