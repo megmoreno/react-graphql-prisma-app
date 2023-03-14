@@ -9,8 +9,7 @@ function Branch({ trunk }: { trunk: boolean }) {
             transition
             ease-in-out
             duration-300
-            group-hover:border-teal-400
-            h-full border-blue-500 border-b-4 absolute -translate-y-10`}
+            h-full border-rose-300 border-b-4 absolute -translate-y-10`}
     />
   )
 }

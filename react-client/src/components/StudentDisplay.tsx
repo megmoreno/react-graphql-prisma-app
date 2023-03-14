@@ -8,8 +8,8 @@ type Props = {
 function StudentDisplay({ student }: Props) {
   return (
     <div className="flex gap-x-24 justify-center">
-      <div className="rounded-sm flex justify-center items-center drop-shadow-md bg-neutral-700 w-48 h-20">
-        <p className="text-xl text-gray-200 font-bold">{student.name}</p>
+      <div className="rounded-sm flex justify-center items-center drop-shadow-md bg-white w-48 h-20">
+        <p className="text-xl text-zinc-800 font-bold">{student.name}</p>
       </div>
       <div>
         {student.learningFocuses.map((learningFocus, i) => (
