@@ -1,13 +1,3 @@
-query GetStudents {
-  students {
-    name
-    learningFocuses {
-      name
-      description
-    }
-  }
-}
-
 query GetWeeklyPlans {
   weeklyPlan {
     activities

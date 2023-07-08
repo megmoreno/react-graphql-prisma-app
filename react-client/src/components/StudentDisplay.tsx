@@ -7,7 +7,7 @@ type Props = {
 
 function StudentDisplay({ student }: Props) {
   return (
-    <div className="flex gap-x-24 justify-center">
+    <div className="flex gap-x-24 m-4">
       <div className="rounded-sm flex justify-center items-center drop-shadow-md bg-white w-48 h-20">
         <p className="text-xl text-zinc-800 font-bold">{student.name}</p>
       </div>
