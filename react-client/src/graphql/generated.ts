@@ -46,7 +46,7 @@ export type LearningFocus = {
 export type Query = {
   __typename?: 'Query';
   students: Array<Student>;
-  weeklyPlan: Array<WeeklyPlan>;
+  weeklyPlan?: Maybe<WeeklyPlan>;
 };
 
 export type Student = {
@@ -75,7 +75,7 @@ export type GetStudentsQuery = { __typename?: 'Query', students: Array<{ __typen
 export type GetWeeklyPlansQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetWeeklyPlansQuery = { __typename?: 'Query', weeklyPlan: Array<{ __typename?: 'WeeklyPlan', activities: Array<string>, endDate: any, id: string, resourcesNeeded: Array<string>, startDate: any, books: Array<{ __typename?: 'Book', author: string, title: string, id: string }>, dailySchedules: Array<{ __typename?: 'DailySchedule', date: any, id: string, dailyScheduleItems: Array<{ __typename?: 'DailyScheduleItem', id: string, planDescription: string, time: any }> }> }> };
+export type GetWeeklyPlansQuery = { __typename?: 'Query', weeklyPlan?: { __typename?: 'WeeklyPlan', activities: Array<string>, endDate: any, id: string, resourcesNeeded: Array<string>, startDate: any, books: Array<{ __typename?: 'Book', author: string, title: string, id: string }>, dailySchedules: Array<{ __typename?: 'DailySchedule', date: any, id: string, dailyScheduleItems: Array<{ __typename?: 'DailyScheduleItem', id: string, planDescription: string, time: any }> }> } | null };
 
 
 export const GetStudentsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetStudents"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"students"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"learningFocuses"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetStudentsQuery, GetStudentsQueryVariables>;

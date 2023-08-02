@@ -19,9 +19,22 @@ builder.prismaObject('WeeklyPlan', {
 
 builder.queryField('weeklyPlan', (t) =>
   t.prismaField({
-    type: ['WeeklyPlan'],
+    type: 'WeeklyPlan',
+    nullable: true,
     resolve: async (query, root, args, ctx, info) => {
-      return prisma.weeklyPlan.findMany({ ...query })
+      const today = new Date()
+
+      return prisma.weeklyPlan.findFirst({
+        ...query,
+        where: {
+          startDate: {
+            lte: today.toISOString(),
+          },
+          endDate: {
+            gte: today.toISOString(),
+          },
+        },
+      })
     },
   })
 )

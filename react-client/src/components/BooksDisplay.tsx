@@ -1,7 +1,7 @@
-import { Book } from '../types'
+import { Book } from '../graphql/generated'
 
 type Props = {
-  books?: [Book]
+  books: Book[]
 }
 
 function BooksDisplay({ books }: Props) {
@@ -10,7 +10,7 @@ function BooksDisplay({ books }: Props) {
       <h1 className="text-med text-zinc-700 font-bold px-4">
         Books we're reading
       </h1>
-      {books?.map((book, i) => (
+      {books.map((book, i) => (
         <li key={i}>{book.title}</li>
       ))}
     </div>

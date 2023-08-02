@@ -15,14 +15,14 @@ function App() {
     query: GetWeeklyPlansDocument,
   })
 
+  let weeklyPlan = weeklyPlansQueryResults.data?.weeklyPlan
+
   return (
     <div>
       <NavBar />
       <div className="columns-2 p-10">
         <div className="w-full">
-          <WeekOverview
-            weeklyPlan={weeklyPlansQueryResults.data?.weeklyPlan[0]}
-          />
+          {weeklyPlan && <WeekOverview weeklyPlan={weeklyPlan} />}
         </div>
         <div className="gap-y-12 overflow-scroll">
           <h1 className="text-rose-500 ml-4 font-semibold text-xl tracking-tight">
